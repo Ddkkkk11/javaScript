@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <style>
+        .b1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+
+        }
+
+
+        .b2 {
+            width: 300px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+<button id="btn01">点我修改样式</button>
+<br>
+<br>
+<br>
+<div class="b1" id="box1">
+
+</div>
+
+<script>
+
+    var btn01 = document.getElementById("btn01");
+    var box1 = document.getElementById("box1");
+    btn01.onclick = function () {
+
+        addClass(box1, "b2")
+    };
+
+    function addClass(obj, cn) {
+        if (!hasClassName(obj, cn)) {
+
+            obj.className += " " + cn;
+
+        }
+    }
+
+    // 创建一个方法  判断当前元素是否含有这个类名 如果含有的话则不添加 反过来 如果没有 才添加
+    function hasClassName(obj, cn) {
+
+        var reg = new RegExp("\\b" + cn + "\\b");
+
+        return reg.test(obj.className);
+    };
+
+
+</script>
+</body>
+
+</html>

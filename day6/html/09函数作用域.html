@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        函数作用域
+            --调用函数时创建函数作用域,函数执行完毕以后,函数作用域销毁
+            --每调用一次函数就会创建新的作用域,他们直接时互相独立的
+            --在函数作用域中,可以访问到全局变量,在全局作用域中无法访问到函数作用域中的变量。
+            --当在函数作用域中操作一个变量时，它会现在自身作用域中去寻找,
+            如果有会直接使用 如果没有会在上一级作用域中寻找,直到找到全局作用域中
+            如果全局作用域依然没有 则会报错 
+            --在函数中如果要访问全局变量,可以使用window对象
+        */
+
+        // 创建一个变量
+        var a = 10;//全局变量
+        function fun() {
+            var a = "我是函数中的变量a";
+            var b = 20;
+            // console.log(a);
+            function fun2() {
+                console.log("a=" + window.a);
+            }
+            // fun2();
+
+
+
+        }
+        // fun();
+        // console.log(b);
+        /* 
+            在函数作用域中,也有声明提前的特性
+                使用var关键字声明的变量,会在函数所有代码执行之前被声明 
+                函数声明也会在所有的代码执行前被声明
+        */
+        function fun3() {
+            fun4();
+
+
+            function fun4() {
+                console.log("我是fun3中的fun4 现在我才声明");
+            }
+
+            console.log("b=" + b);
+            var b = 123;
+        }
+        fun3();
+        var c = 44;
+        function fun5() {
+            console.log("c=" + c);
+            c = 10;
+            // 在外部输出d得到d为100  那是外部可以访问函数内部的变量？(不是的 ,因为d没有使用var 所以d是全局的)  
+            d = 100;
+        }
+        fun5();
+        // 在全局中不使用var的变量时全局变量 
+        // 在全局中输出c result 结果是10
+        console.log("c=" + c);
+        console.log("d=" + d);
+        var e = 123;
+        /* 
+        
+        定义了形参就相当于在函数的作用域中声明了变量
+        */
+        function fun6(e) {
+            alert(e);
+        }
+        fun6(1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

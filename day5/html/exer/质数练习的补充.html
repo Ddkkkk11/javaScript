@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 测试如下程序的性能
+        // 在程序执行前开启一个计时器
+        // console.time();可以用来开启一个计时器
+        // 他需要一个字符串作为参数,这个字符串将会作为计时器的标识符
+            console.time("demo");
+        var sum = 0;
+        for (var i = 1; i <= 1000; i++) {
+            var flag = true;
+            if (i != 1) {
+                for (var num = 2; num <=Math.sqrt(i); num++) {
+                    if (i % num == 0) {
+                        flag = false;
+                        // 一旦进入了判断 则证明不是质数    则再次进入循环没有意义 
+                        break;
+                    }
+                }
+                if (flag) {
+                    console.log("这个数是质数" + i);
+                    sum++;
+                    console.log("总共有" + sum + "个质数");
+                } else {
+                    console.log("这个数不是质数" + i);
+                }
+            }
+        }
+        // 终止计时 
+        //  console.timeEnd("demo");用来终止一个定时器,需要一个计时器作为参数
+        console.timeEnd("demo");
+        /* 
+        36的的因数
+            1*36
+            2*18
+            3*12
+            4*9
+            6*6
+        可以通过Math.sqrt();对一个数进行开放
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

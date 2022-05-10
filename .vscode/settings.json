@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.colorCustomizations": {
+    "[Atom One Light]": {
+            "editor.background": "#FFF9E6",    //FFF9E6
+        "sideBar.background": "#FFF9E6",
+        "activityBar.background": "#FFF9E6",       
+        },
+    },
+    "liveServer.settings.port": 5501,
+ 
+}

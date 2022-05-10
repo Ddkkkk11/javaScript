@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		#areaDiv {
+			border: 1px solid black;
+			width: 300px;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		#showMsg {
+			border: 1px solid black;
+			width: 300px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="areaDiv"></div>
+	<div id="showMsg"></div>
+
+	<script>
+		/* 
+		当鼠标在areaDiv移动时在showMsg来显示鼠标的坐标
+		*/
+		// 获取两个div
+		var areaDiv = document.getElementById("areaDiv");
+		var showMsg = document.getElementById("showMsg");
+		//  给大的div设置鼠标被移动事件  该事件将会在鼠标移动时触发 onmousemove
+		/* 
+			事件对象
+				--当事件的响应函数被触发时,浏览器每次都会将一个事件对象作为实参传递给响应函数
+					在事件对象中封装了当前事件相关的一切信息,比如鼠标的坐标信,键盘那个按键被按下,鼠标滚轮滚动
+						的方向
+		*/
+		areaDiv.onmousemove = function (event) {
+			/* 
+			在IE8中,响应函数被触发时,浏览器不会传递事件对象
+				在IE8及以下浏览器中,是将事件作为window对象的属性进行保存的
+			*/
+			// if (!event) {
+			// 	event=window.event;
+			// }
+				event=event||window.event;
+				// 解决事件对象的兼容问题
+			var X=event.clientX;
+			var Y=event.clientY;
+			showMsg.innerHTML = "x=" +X + "&nbsp;&nbsp;&nbsp;&nbsp; " + "y="+Y;
+			/* 
+			clientX可以获取鼠标的水平坐标
+			clientY可以获取鼠标的垂直坐标
+			
+			*/
+
+
+
+		};
+
+
+	</script>
+</body>
+
+</html>

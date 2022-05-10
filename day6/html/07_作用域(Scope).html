@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        作用域
+            --指一个变量作用的一个范围
+            --在JS中作用域一共分成两种
+                1.全局作用域
+                    --直接编写在script标签中的代码,都在全局作用域中
+                    --全局作用域在页面打开时创建,在页面关闭时销毁
+                    --在全局作用域中有一个对象window,
+                        它代表的是我们浏览器的一个窗口,他由我们浏览器创建,我们可以直接使用
+                    --在全局作用域中,我们创建的变量,都会作为window对象的属性来保存。
+                                    创建的函数都会作为window的方法来保存
+                    --全局作用域中的变量,都是全局变量
+                        在页面的任意部分都可以访问的到
+                2.函数作用域
+        */
+        var p = 1322313123123123;
+        console.log(window.p);
+        function fun() {
+            console.log("我是在window中创建的函数,也是window的方法");
+        }
+        window.fun();
+
+        /* 
+                for(let i in window){
+                    console.log("变量名是"+i);
+                    console.log("变量值是"+window[i]);
+                }
+                   let b=12332;
+                   let c=12123;
+                   let d=1123;
+                function fun() {
+                       var a=1;
+                }
+                        fun();
+         */
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

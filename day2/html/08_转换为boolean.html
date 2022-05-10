@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 将其他的数字类型转换为boolean
+                --使用boolean();函数 
+                数字-->布尔    除了0和NAN其余的都是true
+                字符串-->布尔  除了空串  其余的都是true
+                null和undefined转换为false
+                对象也会转换为true
+                隐式数据类型转换        var a="hello";     a=!!a;
+            可以为任意一个数据类型做两次非运算 ，来将其转换为布尔值
+
+                */
+        var a = 123; //123  456  -123 true   0 false   Infinity    true      NAN false
+            //调用boolean()函数 将a转换为Boolean
+
+        a=null;//null 转换为false
+        a=undefined;//false 
+        a=Boolean(a);        
+        console.log("a的数据类型是:",typeof a);
+        console.log("a的字面量是:",a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

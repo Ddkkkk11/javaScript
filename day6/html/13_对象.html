@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        创建一个对象
+        
+        */
+        var obj = {
+            name: "Xdd",
+            age: 12,
+            gender: "男",
+            sayName: function () {
+                alert(this.name);
+            }
+        };
+        // obj.sayName();
+        /* 
+        使用工厂方法创建对象
+         通过该方法可以大批量创建对象 */
+        function createPerson(name, age, gender, address) {
+            // 创建一个新的对象
+            var obj = new Object();
+            // 向方法里面添加一个新的属性
+            obj.name = name,
+                obj.age = age,
+                obj.gender = gender,
+                obj.address = address,
+                obj.sayName = function () {
+                    alert(this.name);
+                },
+                obj.sayAge = function () {
+                    alert(this.age);
+                }
+            // 将新的对象返回
+            return obj;
+        }
+        var obj2 = createPerson("薛军栋", 123, "男", "安康学院");
+        var obj3 = createPerson("qwe", 23, "男", "安康学院");
+        var obj4 = createPerson("asd", 12, "男", "安康学院");
+        // obj3.sayAge();
+        /* 使用工厂化创建的对象,使用的构造函数都是Object
+            所以创建的对象都是Object这个类型,
+            导致我们无法区分出多种不同类型的对象 */
+        function createDog(name, age) {
+            var obj = new Object();
+            obj.name = name,
+                obj.age = age,
+            obj.sayName = function () {
+                    alert(this.age);
+                }
+            return obj;
+
+        }
+        var obj111 = createDog("薛军栋", 20);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

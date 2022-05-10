@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.time("demo");
+        /* 
+        在JS中使用Date对象来表示一个时间
+        如果直接使用构造函数创建一个Date对象,则会封装为当前代码执行的时间
+        */
+        var d = new Date();
+        // 创建一个指定的时间对象
+        //需要在构造函数中传递一个表示时间的字符串作为参数
+        // 日期的格式  月份/日/年份 空格 小时:分钟:秒
+        // console.log(d);
+        var d2 = new Date("4/15/2021 11:10:30");
+        // var date= d2.getDate();
+        /* 
+        getDate()
+            获取当前对象是几日 (几号)
+        getDay()获取我们当前对象是周几
+            会返回一个0-6的值
+                0表示周日
+                1表示周一 6表示 周六
+        */
+        //    var date=d.getDay();
+        var month = d.getMonth();
+        /* 
+            getMonth();表示获取当前对象的月份
+                -会返回一个0-11的值
+                    0表示一月 
+                    ...11表示的是12月
+        
+        */
+        // console.log("d==" + (month+1));
+
+        /* 
+        
+        getFullYear();获取我们当前日期的年份
+        */
+        var year = d.getFullYear();
+        // console.log("year=="+year);
+        var second = d.getSeconds();
+        // console.log("当前是多少秒"+second);
+        /*
+            getTime()
+                --获取我们当前对象日期的时间戳
+                --时间戳,指的是从格林威治标准时间的1970年一月一日，0时0分0秒
+                    到当前日期所花费的毫秒(一秒==1000毫秒)
+                --计算机底层在保存时间使用的都是时间戳
+        */
+        // var time = d.getTime();
+        // console.log(time / 1000 / 60 / 60 / 24 / 365);
+        //  var d3=new Date("1/1/1970 0:0:0");
+        //     time=d3.getTime();
+        // console.log(time);
+        /* 
+        获取当前时间戳
+        */
+        // time = Date.now();
+        var start=Date.now();
+        // console.log(time/1000/60/60/24/365);
+        // console.timeEnd("demo");
+        for (var i = 0; i < 100; i++) {
+            console.log(i);
+         }
+         var end=Date.now();
+         console.log(end-start);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

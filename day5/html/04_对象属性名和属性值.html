@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = new Object();
+        //向对象中添加属性
+        obj.name = "xdd";
+        /* 
+            --对象的属性名不强制要求遵守标识符的规范
+                任何名字都可以起
+            但是使用时尽量按照标识符规范去做
+        */
+        /* 
+            如果要使用特殊的属性名,不能采用.的方式去操作
+                需要使用另一种语法
+                    语法:对象["属性名"]=属性值;
+            读取时也需要采取这样的方式
+        使用[]这种方式去操作属性,更加的灵活,
+            在[]中可以直接传递一个变量,这样变量值时多少就会读取那个属性
+              var n="123";         obj["456"]=234;           obj["123"]=123;
+            console.log(obj[n]);
+            输出的结果是
+            123 相当于把属性名的值用变量n代替
+
+        */
+        //    obj["123"]=123;
+        //    console.log(obj["123"]);
+        /* 
+            属性值
+                JS的对象属性值,可以是任意的数据类型
+                      甚至可以是一个对象      
+        */
+        var obj2 = new Object();
+        obj2.name = "猪八戒";
+        obj.test = obj2;
+        console.log(obj.test);
+                /*
+            in运算符
+                 --通过该运算可以检查一个对象中是否含有指定的属性
+                        如果有则返回true 没有的话则返回false
+                    语法:
+                        "属性名" in 对象;    
+        */
+    //    猪八戒返回 false
+        "demo" in obj2;
+        console.log("name" in obj);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

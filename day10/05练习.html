@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 500px;
+            margin: 50px auto;
+            background-color: aqua;
+            padding: 10px;
+            /* 设置文本居中 */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <p id="info"></p>
+        <img src="./IMG/1.jpg" alt="冰棍">
+        <button id="perv">上一张 </button>
+        <button id="next">下一张</button>
+
+    </div>
+    <script>
+            
+        /* 
+        点击按钮切换图片
+        */
+        //    获取按钮
+        var btn1 = document.getElementById("perv");
+        // 要切换图片就是要修改img标签的src属性
+        // 获取img标签
+        var IMG = document.getElementsByTagName("img")[0];
+        // 创建一个数组用来保存图片路径
+        // console.log(IMG);
+        var IMGArr=["./IMG/1.jpg","./IMG/2.jpg","./IMG/3.jpg","./IMG/4.jpg","./IMG/5.jpg"];
+        // 创建一个变量来保存当前正在显示图片的索引
+        var index=0;
+        // 设置 提示文字
+        var info=document.getElementById("info");
+        info.innerHTML ="一共是"+IMGArr.length+"张图片当前是第1张"
+
+        btn1.onclick = function () {
+            // alert("上一张");
+            index--;
+            if(index<0){
+                index=IMGArr.length-1;
+            }
+           IMG.src=  IMGArr[index];
+        info.innerHTML ="一共"+IMGArr.length+"张图片当前是"+(index+1)+"张";
+
+        // console.log("1="+index1);
+    };
+        // 获取按钮
+        var btn2 = document.getElementById("next");
+        btn2.onclick = function () {
+
+            // alert("下一张");
+            // 切换图片就是修改img的src属性
+            // 要修改img属性 就是img.src=;   读取的话是img.src
+            index++;
+            if(index>IMGArr.length-1){
+                    index=0;
+            }
+           IMG.src=IMGArr[index];
+        //    console.log("0="+index); 
+        info.innerHTML ="一共是"+IMGArr.length+"张图片当前是"+(index+1)+"张";
+            console.log(info.innerHTML);
+
+        };
+
+
+    </script>
+
+
+</body>
+
+</html>

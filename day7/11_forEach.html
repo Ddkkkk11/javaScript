@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        一般我们是使用for循环去遍历数组的,JS中还为我们提供了一个方法,用来遍历数组
+        forEach()
+            这个方法只支持ie8以上的浏览器
+            如果需要兼容ie8则不要使用forEach
+                还是使用for循环遍历
+        */
+        // 创建一个数组
+
+        /* 
+        forEach这个方法需要一个函数作为参数
+            --像这种函数,由我们创建但是不由我们调用,我们成为回调函数 
+            --数组中有几个函数,我们函数就会执行几次,每次执行时浏览器会将遍历到的元素
+                以实参的形式传进来,我们可以定义形参，来读取这些内容 
+            浏览器会在回调函数中传递三个参数    
+                第一个参数就是当前正在遍历的元素
+                第二个参数就是当前正在遍历元素的索引
+                第三个参数就是当前正在遍历的数组
+        */
+        var arr = ["123", "234", "345", "456"];
+        arr.forEach(function (value, index, obj) {
+            console.log("value=" + value);
+            console.log("index=" + index);
+            console.log("obj=" + obj);
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

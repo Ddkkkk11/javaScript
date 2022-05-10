@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>我是前面</h1>
+    <script>
+        /* 
+            BOM浏览器对象模型
+            --BOM可以是我们通过JS操作浏览器
+            --在BOM中浏览器为我们提供了一组对象,用来完成我们对浏览器的操作
+            --BOM对象
+                Window
+                    --Window代表的是浏览器的窗口,同时Window也是网页中的全局对象
+                Navigator
+                    --代表的是当前浏览器的信息,通过该对象可以来识别不同的浏览器
+                Location
+                    --代表当前浏览器的地址栏信息,通过location可以获取浏览器地址栏信息,或者操作浏览器跳转页面
+                History
+                    --代表浏览器的历史记录,可以通过该对象来操作浏览器的历史记录
+                        --由于隐私的原因该对象不能获取到具体的历史记录,只能通过浏览器操作网页向前或者向后翻页
+                            而且该操作只在当次访问的时候有效
+                Screen
+                    --代表用户的屏幕信息,通过该对象可以获取到用户的屏幕信息(显示器的相关信息)
+
+            这些对象在浏览器中都是作为Window对象的属性保存
+                    也可以通过Window对象来使用(window.screen), 也可以直接使用 screen  
+        
+        */
+        /* 
+         Navigator
+                    --代表的是当前浏览器的信息,通过该对象可以来识别不同的浏览器
+            由于历史原因,navigator对象中的大部分属性都已经不能帮助我们识别浏览器了
+                一般我们只会使用userAgent来判断浏览器的信息
+                    userAgent是一个字符串,这个字符串中包含有用来描述浏览器的信息的内容
+            不同的浏览器会有不同的userAgent 
+            chrome的userAgent 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36
+        火狐的userAgent 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0    
+        Edge的userAgent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44                
+     在IE11中已经将微软和IE的标识符去除了,所有我们基本上不能通过userAgent来来识别一个浏览器是否是IE 
+     */
+                    // console.log(navigator.userAgent);
+        var  user= navigator.userAgent;
+        // console.log(user);
+        //     if (/Chrome/i.test(user)) {
+        //         alert("chrome浏览器");
+        //     }
+/* 
+            如果通过userAgent不能判断,还可以通过一些浏览器中的特有对象,来判断浏览器的信息
+            比如
+                ActiveXObject       如果用这个对象判断不出来 可以使用 属性  in 对象 中 返回true 则代表有
+
+    */
+            console.log(ActiveXobject);
+    </script>
+</body>
+</html>

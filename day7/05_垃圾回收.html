@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        垃圾回收(GC)garbage collection
+                --就向人生活的时间长了会产生垃圾一样,程序运行过程中也会产生垃圾 
+                    垃圾积攒过多以后,会导致程序运行的速度过慢
+                        所以我们需要一个垃圾回收机制，处理程序在运行过程中产生的垃圾
+
+                        --当一个对象没有任何的变量和属性对它进行引用,此时我们将永远无法操作该对象
+                            此时这种对象就是一个垃圾,这种对象过多会占用我们大量的内存空间,导致程序运行变慢
+                                    所以需要对这种垃圾进行清理
+            比如创建一个对象 ,对对象进行各种操作,最后给对象赋值null 然后对象所对应的地址也变成了null
+                对象和堆内存的空间就没有了连接(地址为null) 没有东西可以对堆内存的空间进行操作 
+                这个堆内存也就变成了垃圾    
+        */
+       /* 
+       在JS中有自动的垃圾回收机制,会自动将这些垃圾对象从内存中销毁
+            我们不需要也不能进行垃圾回收的操作
+        --我们需要做的是将不在使用的对象值设置为Null即可 */
+        var obj=new Object();
+        // 对对象进行各种操作
+
+        obj=null;
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

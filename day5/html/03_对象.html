@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            JS中的数据类型
+                ——String 字符串
+                ——number 数字
+                ——boolean 布尔值
+                ——null  空值
+                ——undefined  未定义
+                    ——以上五种数据类型属于基本的数据类型,以后我们看到的值  
+                            只要不是上面五种,全都是对象
+                ——object 对象
+
+            基本的数据类型都是单一的值 
+                    值和值之间没有任何的联系
+            在JS中表达一个人的信息（age name）
+                var name="猴子";
+                var age=123;
+                如果使用基本数据类型的数据，我们所创建的变量都是独立，不能成为一个整体。
+            对象属于一种符合的数据类型,在对象中可以保存多个不同数据类型的属性
+                    对象的分类
+                        1.内建对象
+                            --有es标准中定义的对象,在任何ES实现中都可以使用
+                            --比如 Math Function boolean String   object
+                        2.宿主对象
+                            --有JS运行环境 提供的对象,目前来讲主要是由浏览器提供的对象
+                            --比如BOM 和DOM
+                        3.自定义对象
+                            --由开发人员自己创建的一个对象
+                */
+        // console.log("console就是一个对象");
+        // document.write("document也是一个对象");
+        // 创建一个对象
+        var obj = new Object();
+        /* 
+            使用new关键字调用的函数,是构造函数constructor
+                构造函数是用来专门创建对象的函数
+            使用typeof检查一个对象时会返回一个object
+           */
+        // console.log(obj);
+        /* 
+            在对象中保存的值成为属性
+                 向对象添加属性
+                    语法:对象.属性名=属性值;
+        
+        */
+        //    向对象中添加一个name属性
+        obj.name = "Javascript";
+        //    向对象中添加一个gender属性
+        obj.gender = "男";
+        // 添加一个年龄属性
+        obj.age = 123;
+        // console.log(obj.age);
+        /*
+        读取我们对象中的属性
+            语法:对象名.属性名
+    如果读取对象中没有的属性,不会报错会返回underfined
+    */
+        /*
+            修改属性值
+                语法:
+                        对象名.属性名=新属性值;
+        
+        */
+        obj.name = "XDD";
+        console.log(obj.name);
+        /*
+        删除对象属性
+            语法:delete 对象.属性名
+            */
+           delete obj.name;
+           console.log(obj.name);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

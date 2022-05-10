@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+
+
+    }
+
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: antiquewhite;
+        position: absolute;
+    }
+
+    #box2 {
+        width: 200px;
+        height: 100px;
+        background-color: aqua;
+        position: absolute;
+        left: 100px;
+    }
+</style>
+
+<body>
+    <button id="btn01">点击按键以后box1向右移动</button>
+    <button id="btn02">点击按键以后box1向左移动</button>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div style="height: 1000px; position: absolute; border-left: 1px black solid  ; left: 800px;top: 0px;"></div>
+    <script>
+        // getStyle 方法
+        function getStyle(obj, name) {
+            return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name];
+        }
+        var btn01 = document.getElementById("btn01");
+        var btn02 = document.getElementById("btn02");
+        var box1 = document.getElementById("box1");
+        var timer;
+        btn01.onclick = function () {
+            // 43-80
+            //     // 开启一个定时器用来执行动画效果
+            //     clearInterval(timer);
+            //     timer = setInterval(function name(params) {
+            //         // 获取box1原来的值
+            //         // clearInterval(timer);
+            //         let oldValue = getStyle(box1, "left");
+            //         // alert(oldValue);
+            //         let newValue = parseInt(oldValue) + 10;
+            //         if (newValue >= 800) {
+            //             newValue = 800;
+            //             clearInterval(timer);
+            //         }
+            //         box1.style.left = newValue + "px";
+            //         // box1.style.top = obj + 50 + "px";
+            //         // 判断 如果box1.style.left的值大于八百 
+            //         // if (newValue >= 800) {
+            //         //     newValue = 800;
+            //         //     clearInterval(timer);
+            //         // }
+            //         // 当移动到800px 定时器关闭
+            //     }, 10);
+            // };
+            // btn02.onclick = function () {
+            //     // 开启一个定时器用来执行动画效果
+            //     clearInterval(timer);
+            //     timer = setInterval(function () {
+            //         // 获取box1原来的值
+            //         // clearInterval(timer);
+            //         let oldValue = getStyle(box1, "left");
+            //         // alert(oldValue);
+            //         let newValue = parseInt(oldValue) - 10;
+            //         if (newValue < 0) {
+            //             newValue = 0;
+            //             clearInterval(timer);
+            //         }
+            //         box1.style.left = newValue + "px";
+
+            //     }, 10);
+            // };
+            run(10, 0, 1200, box2);
+            // run(-10,-10,800);
+        }
+        btn02.onclick = function () {
+            run(-10, 0, 800, box2);
+
+
+        };
+
+
+        // 创建一个简单动画的函数
+        // 参数1 speed  参数2 向左移动定时器停止的条件  参数3 向右移动定时器停止的条件 4 给那个对象平移
+        function run(num, condition, condition1, obj) {
+            // 开启一个定时器用来执行动画效果
+            clearInterval(timer);
+            timer = setInterval(function () {
+
+                let oldValue = getStyle(obj, "left");
+                // alert(oldValue);
+                let newValue = parseInt(oldValue) + num;
+                if (num < 0 && newValue < condition) {
+                    newValue = condition;
+                    clearInterval(timer);
+                } else if (num > 0 && newValue >= condition1) {
+                    newValue = condition1;
+                    clearInterval(timer);
+                }
+                obj.style.left = newValue + "px";
+            }, 10);
+
+        }
+
+    </script>
+</body>
+
+</html>

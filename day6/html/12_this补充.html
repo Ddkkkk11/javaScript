@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个name变量
+        var name = "全局";
+        //创建一个fun函数
+        function fun() {
+            console.log(this.name);
+        }
+        var obj = {
+            name: "xdd",
+            sayName: fun,
+            age: 21
+        };
+        var obj2 = {
+            name: "薛dongdong",
+            sayName: fun,
+            age: 18
+        };
+        // 我们希望调用obj.sayName();能够输出obj的name属性
+        obj2.sayName();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

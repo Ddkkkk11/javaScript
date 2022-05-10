@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 判断一个数是否为质数
+        var num = prompt("请输入一个数字");
+        // 默认当前数字为质数
+        var flag=true;
+        for (var i = 2; i < num; i++) {
+            if (num % i == 0) {
+                alert("这个数不是质数");
+                flag=false;
+                break;
+            }
+        }
+        if(flag){
+            alert("这个数是质数");
+
+        }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

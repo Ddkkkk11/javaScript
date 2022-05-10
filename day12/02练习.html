@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>添加删除记录练习</title>
+	<link rel="stylesheet" type="text/css" href="./111.css" />
+
+</head>
+
+<body>
+	<table id="employeeTable">
+
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="javascript:;">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="deleteEmp?id=002">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						提交
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<script>
+		// 为a连接创建单击响应函数  
+		function aFun() {
+			let tr = this.parentNode.parentNode;
+			let flag = confirm("你确定要删除" + tr.firstElementChild.innerHTML + "吗");
+			if (flag) {
+				tr.parentNode.removeChild(tr);
+			}
+		};
+		/*
+		点击超链接后，删除一个员工信息
+			*/
+		// 获取所有的超链接
+		var allA = document.getElementsByTagName("a");
+		/* 
+		为每个超链接绑定单击响应函数
+		*/
+		for (let index = 0; index <allA.length; index++) {
+			var father = allA[index].parentNode.parentNode;
+			allA[index].onclick =aFun;
+			
+			// function () {
+			// 	// 点击超链接以后需要删除超链接所在的哪一行 
+			// 	// 这里this我们点谁this就是谁
+			// 	var tr = this.parentNode.parentNode;
+			// 	// 删除前弹出一个提示框
+			// 	// 获取要删除的员工的名字   tr.getElementsByTagName("td")[0].innerHTML   tr.children[0].innerHTML
+			// 	var flag = confirm("你确定要删除" + tr.firstElementChild.innerHTML + "吗");
+			// 	// tr.innerHTML = "";
+			// 	// 判断用户点击的是确定还是取消 Confirm用于弹出一个带有确认和取消的按钮
+			// 	// 需要一个字符串作为参数 该字符串将会作为字符串的提示文字 显示在弹出框
+			// 	// 如果用户点击确定 则返回true 如果用户点击取消 去返回false
+			// 	if (flag) {
+			// 		tr.parentNode.removeChild(tr);
+			// 	}
+			// 	/* 
+			// 	点击超链接后 超链接会跳转页面,这个是超链接的默认行为
+			// 	但是我们此时不希望他跳转  可以通过响应函数的最后return false 来取消默认行为
+			// 	*/
+			// 	return false;
+			// }
+		}
+ 		/* 
+		添加员工的功能
+			点击按钮以后 将员工信息添加到表格中
+		
+		*/
+		// 绑定按钮单击函数
+		var btn = document.getElementById("addEmpButton");
+		btn.onclick = function () {
+			// 获取员工的名字 
+			var name = document.getElementById("empName").value;
+			// 员工的邮箱
+			var email = document.getElementById("email").value;
+			// 员工的工资
+			var salary = document.getElementById("salary").value;
+			// alert(name + "" + email + "" + salary);
+			/* 
+		   <tr>
+		   <td>Bob</td>
+		   <td>bob@tom.com</td>
+		   <td>10000</td>
+		   <td><a href="deleteEmp?id=003">Delete</a></td>
+				</tr> 
+			 需要将获取到的信息保存到tr中 
+			  */
+			//   创建一个tr
+			var tr = document.createElement("tr");
+				// 设置tr中的内容
+				tr.innerHTML="<td>"+name+"</td>"
+							+"<td>"+email+"</td>"
+							+"<td>"+salary+"</td>"
+							+"<td><a href='javascript:;'>Delete</a></td>";
+			// 为新来的a在添加一个单击响应函数	
+				tr.lastElementChild.children[0].onclick=aFun;
+				// tr.getElementsByTagName("a")[0];
+
+			// 获取table
+			var table = document.getElementById("employeeTable");
+			// 获取tbody
+			var tbody = table.getElementsByTagName("tbody")[0];
+			tbody.appendChild(tr);
+		}
+	</script>
+
+</body>
+
+</html>

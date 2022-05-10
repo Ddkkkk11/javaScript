@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+                条件分支语句也叫Switch语句
+                语法:
+                    Switch(条件表达式){
+                         case 表达式:
+                                语句...
+                                break;
+                       
+                         case 表达式:
+                                语句...
+                                break;
+                        default:
+                                语句...
+                                break;
+                    }
+              */
+        var month = +prompt("请输入现在的月份");
+        switch (month) {
+            case 3:
+            case 4:
+            case 5:
+                alert("现在是春天");
+                // 使用break语句可一用来退出Switch语句 在case后面跟着一个break语句这样可以确保 
+                // 只会执行当前代码
+                break;
+            case 6:
+            case 7:
+            case 8:
+                alert("现在是夏天");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                alert("现在是秋天");
+                break;
+            case 12:
+            case 1:
+            case 2:
+                alert("现在是冬天");
+                break;
+            default:
+                alert("非法语句");
+                break;
+        }
+              /* 执行流程
+        Switch...case..语句
+            在执行时依次将case后的表达式的值和Switch的值进行全等比较    
+                如果返回值为true则从当前开始执行代码
+                    当前case后的所有代码都会执行
+                    如果返回值为false 则继续向下比较
+                        如果所有的值都返回false 则会执行最后一个语句default: /n语句1 /n break;
+            使用Switch语句和if语句的功能实际上是有重复的，使用Switch可以实验if的功能
+                同样使用if语句可以实现Switch的功能，在使用时可以根据自己的习惯选择
+  
+
+  */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 通过自增 ++可以使变量在自身基础+1  
+        //对于一个变量自增以后，原变量的值会立即自增1
+        //自增分为两种 a++和 ++a  都可以使变量自增1
+            //不同的是a++ 和++a的值不同     
+            // a++的值等于原变量的值  (自增前的值) ++a 等于原变量自增后的值
+        var a=10;
+        //10 + 12+12
+        var result=a++ + ++a + a;
+        var d;
+        d=d++;
+        alert(result);
+        //对于一个变量自减以后，原变量的值会立即自减1   自减分两种  --a和 a--
+        //不同的是a--和 --a的值不同  a--等于原变量的值 --a等于原变量自减后的值
+            var c=10;
+            var i=c-- + --c + c;
+            //10 +8+ 8
+            console.log(i);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

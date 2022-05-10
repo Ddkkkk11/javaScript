@@ -1,0 +1,1 @@
+alert("我是外部js中的alert代码");

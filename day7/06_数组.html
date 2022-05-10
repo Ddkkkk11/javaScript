@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        对象分为三种
+            内荐对象
+            宿主对象
+            自定义对象
+                面向对象(找对象，操作对象)
+                数组(Array)
+                    -数组也是一个对象
+                    -它和我们普通对象功能类似,也是用来存储一些值的。
+                    -不同的是普通对象是使用字符串作为属性名的,
+                        而数组是使用数字作为索引(index)来操作元素
+                        属性在对象里成为属性 在数字里面成为元素
+                --索引:
+                    从0开始的整数就是索引
+                -数组的存储性能比普通的对象要好,在开发过程中我们使用数组来存放一些数组
+            */
+        // 创建一个数组对象
+        var sum = 0;
+        var array = new Array();
+        array[6] = 12444;
+        array[2] = 12444;
+        array[1] = 12444;
+        array[3] = 12444;
+        array[4] = 12444;
+        array[5] = 12444;
+        array[7] = 23;
+        
+        // console.log(array);
+        // console.log(array.length);
+
+
+
+
+        // 像数组最后一个位置添加元素
+        // 语法:
+        // array[array.length]
+        array[array.length]=2132;
+        array[array.length]=2132;
+        array[array.length]=2132;
+        array[array.length]=2132;
+        array[array.length]=2132;
+        console.log(array);
+        /* 
+            修改length
+                如果修改length大于原长度,则多出来的部分会空出来
+            如果修改的length小于原长度,则多出来的部分会被删除
+        */
+
+
+
+        // Array就是数组的构造函数
+        // 使用typeof检查一个数组时返回值是Object
+        // alert(typeof arr);
+
+        /* 
+        向数组中添加元素
+            语法:
+                数组[索引]=值;
+        */
+        
+        // 读取数组中的元素
+        // 语法
+        // 数组[索引]       如果读取不存在的索引,不会报错会返回undefined     
+
+        // for (var n in array) {
+        //     console.log("属性名" + n + "\ \ \ \ :" + array[n]);
+        // }
+        /* 
+        获取数组的长度
+            可以使用Length属性来获取数组的长度(元素的个数)
+            语法:数组.length
+        --对于连续的数组,使用length可以获取数组的长度(元素的个数)
+        --对于非连续的数组,使用length会获取到数组的最大所有+1
+        尽量不要创建非连续数组
+        
+        */
+        // console.log(array.length);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

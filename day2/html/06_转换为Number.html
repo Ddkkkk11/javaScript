@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 将其他类型转换为Number
+        转换方式  
+            方法一：
+                 使用Number();函数         
+            字符串-->数字
+                        1.如果是纯数字的字符串，则直接可以将字符串转换为数字
+                        2.如果是字符串中有非数字的内容，则将字符串转换为NAN
+                        3.如果字符串是空串，或者全部是空格的字符串，则转换为0
+            布尔--> 数字 true 转换为1   false 转换 0
+            NUll-->数字  null转换为0
+            Undefined-->数字   Undefined转换为NAN
+            方法2：
+                --这种方式专门用来转换为字符串（字符串中有部分非数字内容会转换为NAN  比如向获取123px中的这个123  收到局限）
+                    parseInt();  把一个字符串转换为整数
+                    parseFloat(); 把一个字符串转换为浮点数 
+
+        */
+        var a = "123px";
+        // 调用Number()函数转换为Number
+        // a=Number(a);
+        // 调用parseInt()将字符串中带有非法字符的转换为数字
+        /* 
+            parseInt()可以将一个字符串转换为有效的整数去除来，
+            然后转换为Number
+            parseFloat()和parseInt()类似，不同的是他可以获取有效的小数部分
+
+            如果对非字符串String使用parseFloat()和parseInt() 
+                他会先把字符串  然后再操作
+        */
+        // a = parseInt(a);
+        // a=Number(a);
+         a = parseInt(a);
+        console.log(a);
+        console.log(typeof a);
+    </script>
+</head>
+<body>
+</body>
+</html>

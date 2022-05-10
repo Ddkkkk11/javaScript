@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 三元运算符
+            语法：
+                条件表达式 ?:  语句1: 语句2
+                        --执行的流程
+                            条件运算符在执行时，首先对条件表达式进行求值
+                                如果该值为true则执行语句1  如果该值为false 则执行语句2 并返回执行结果
+                                如果该值为false 这执行语句2，并返回执行结果
+                        如果条件表达式的求指结果是一个非布尔值，则会将数据类型转换为布尔值在运算表达式
+        */
+        var a = 10;
+        var b = 3;
+        var c = 20;
+
+        // console.log(a > b ? a : b);
+        // a > b ? alert("a大") : alert(b大);
+        var max = a > b ? a : b;
+        var max = max > c ? max : c;
+        //这种写法不推荐使用,不方便阅读
+        var maxx = a > b ? (a > c ? a : c) : (b > C ? b : c);
+        console.log("max=" + max);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

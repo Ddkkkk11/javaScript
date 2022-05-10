@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var str = '{ "name":"xdd","age":"12","gender":"男"}';
+        /* 
+            evel(); 
+                这个函数可以用来执行一段字符串形式的JS代码,并将执行结果(对象)返回
+            --如果使用eval()执行的字符串中含有{} 他会将{}当成是代码块   
+                    如果不希望被当成代码块 可以在字符串前后各家一个()
+                    '({ "name":"xdd","age":"12","gender":"男"})'
+        */
+        /* 
+            eval()这个函数功能很强大,可以直接执行一个字符串中的JS代码
+                但是在开发中尽量不要使用,首先他的执行性能比较差,然后他还具有安全隐患
+        
+        */
+        var  str2="alert('hello');"
+
+
+
+
+
+        evel(str2);
+    </script>
+</body>
+
+</html>

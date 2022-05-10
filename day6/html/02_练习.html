@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 定义一个函数，判断一个数字是否是偶数，如果是返回true，否则返回false
+        /*  function even(a) {
+             return a%2==0;
+         }
+         var result=even(prompt("请输入一个数"));
+             if(result==true){
+                 alert("这个数是偶数");
+             }else{
+                 alert("这个数是奇数");
+             } */
+        // 定义一个函数，可以根据半径计算一个圆的面积，并返回计算结果
+        /* function circle(r) {
+                var area=3.14*(r*r);
+                return area;
+        }
+        var result =circle(prompt("请输入半径"));
+            alert(result); */
+        // 创建一个函数,可以在控制台输出一个人的信息
+        /* 
+        */
+        function sayHello(o) {
+            // console.log("o=" + o);
+            console.log("我叫" + o.name + ",今年" + o.age + "岁了," + "我的性别是" + o.gender + ",我家住在" + o.address + "这里");
+        }
+        // sayHello("xdd",123,"男","安康学院");
+        let obj = {
+            name: "猪八戒",
+            age: "12",
+            gender: "男",
+            address: "高老庄"
+        };
+        sayHello(obj);
+        // 实参可以是一个对象
+        // 当我们的参数过多时,可以将参数封装到一个对象中,然后通过对象传参
+         function fun(a) {
+            //  console.log("a=" + a);
+            a(obj);
+         }
+         fun(sayHello);//a=sayHello
+            /* 
+           fun1和fun1()区别
+        fun1 函数对象       相当于把对象赋值给形参
+        fun1()调用函数      相当于把函数的返回值复制给形参  相当于直接使用函数对象
+         */
+    </script>
+</head>
+<body>
+</body>
+</html>

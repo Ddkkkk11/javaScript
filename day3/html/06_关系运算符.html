@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            关系运算符可以比较两个值之间的大小关系，
+                如果关系成立他会返回true，反之则返回false
+                    >大于号 判断左侧的值是否大于右侧  关系成立则返回true 
+                    >=大于等于号 判断左侧是否大于等于右侧 成立返回true
+        */
+        /* 对于非数值比较时，会将其转换结果 转换为数值 然后再比较
+                如果符号两侧的值都是字符串，不会将其转换为数字 在比较
+                    而会分别比较字符串的unicode编码
+        
+        */
+        var result = 5 >= 5;
+        result = 1 > 1;
+        // 任何值和null进行比较时  返回的结果都是false
+        result = 10 < "hello";
+        result = "asd" < "sdf";
+        // 比较两个字符串时，比较的是字符串的字符编码   unicode编码
+        // 比较字符串时 是一位和一位进行比较的  
+        // 如果两位一样，则比较下一位，可以借用他对英文进行排序
+        // 比较中文时没有意义
+        // result = "11" > "2";
+        // 如果比较的是两个字符串类型的数字 可能会得不到预期的结果
+        // 所以比较两个字符串时 一定要注意转型
+        console.log(result);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

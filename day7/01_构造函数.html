@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        创建一个Person构造函数
+            在Person构造函数中,为每一个对象添加了一个sayName方法
+                目前我们的方法是在构造函数内部创建的,
+                也就是构造函数每执行一次就会创建一个新的sayName方法
+            也是所有实例的sayName都是唯一的    
+                    这样就导致了构造函数每执行一次就会创建一个新的方法
+                        执行一万次就创建了一万次方法 ,而我们一万个方法都是一样的
+                            完全没有必要,可以使所有的对象共享同一个方法
+                                我们可以在全局中定义一个函数,然后把函数赋值给sayName方法,
+                                这样每次都只需要创建一个方法
+        */
+        function Person(name, age, gender, address) {
+            this.name = name;
+            this.address = address;
+            this.gender = gender;
+            this.age = age;
+            // this.sayName = fun;
+        }
+        // 将sayName方法在全局作用域中定义
+            /* 
+                将函数定义在全局作用域,污染了全局作用域的命名空间
+                    而且定义在全局作用域中很不安全
+            */
+        // function fun() {
+        //     alert("大家好,我是" + this.address);
+        // };
+        // 向原型中添加sayName方法
+            Person.prototype.sayName=function(){
+                alert(this.address);
+            }
+        // 创建一个Person的实例
+        var obj = new Person("asd", 19, "男", "安康");
+        var obj2 = new Person("asd", 19, "男", "陕西");
+        var obj3 = new Person("asd", 19, "男", "Beijing");
+        obj3.sayName();
+        // obj2.sayName();
+        // obj3.sayName();
+        // console.log(obj.sayName == obj2.sayName);
+    </script>
+</head>
+<body>
+</body>
+</html>

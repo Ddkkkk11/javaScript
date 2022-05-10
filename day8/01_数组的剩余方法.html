@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = ["xdd", "qwe", "iop"];
+        let arr1 = ["zxc", "wer", "cvb"];
+        let arr2 = ["asd", "cvb", "qaz"];
+
+        /*
+        concat()可以连接两个或多个数组,并将新的数组返回
+                -这个方法不会对原数组产生影响(不仅可以传数组,还可以传元素)
+        */
+        let a = arr.concat(arr1, arr2);
+        // console.log(a);
+        /* 
+        join();该方法可以将数组转换为字符串
+                该方法不会对原数组产生影响，而是将转换后的字符串作为结果返回
+                在join()中可以指定一个字符串作为参数,这个字符串将会作为元素的连接符
+                    如果不指定连接符,则默认使用(,)连接
+        */
+        // console.log(typeof a);
+        // a = arr1.join("-->");
+        // console.log( a);
+        /* 
+        reverse()
+            该方法用来反转数组(前边的去后面,后面的去前面)
+                该方法会直接修改原数组  
+        */
+        //    arr.reverse();
+        //    console.log(arr.join());
+        var array = ["a", "b", "d", "c", "w", "e", "q"];
+        var array1 = [7, 8, 6, 11, 4, 7, 9, 3, 2, 1];
+        /* 
+        sort();
+            可以用来对我们数组中的元素进行排序
+                也会影响原数组,默认会按照Unicode编码进行排序
+            即使对纯数字的数组,使用sort()排序时,也会按照Unicode编码进行排序
+                所以对数字进行排序可能会得到错误的结果
+            但是我们可以自己指定排序的规则
+                我们可以在sort中添加一个回调函数,来指定我们的排序规则
+                    回调函数里面我们需要定义两个形参
+                        浏览器会分别使用数组中的元素作为实参去调用回调函数
+                            使用那个元素调用不确定,但是肯定得是数组中a一定在b的前面
+            --浏览器会根据回调函数的返回值来决定元素的顺序
+                如果返回一个大于0的值元素会交换位置
+                如果返回一个小于0的值元素的位置不变
+                如果返回0,则认为元素相等,也不交换位置
+            如果需要升序排列,则返回a-b
+            需要降序排列,则返回b-a
+        */
+        array1.sort();
+        var w = [5, 4, 11, 1, 3];
+        w.sort(function (a, b) {
+            //    如果a>b
+            // if (a > b) {
+            //     return 1;
+            // }
+            // if (a == b) {
+            //     return 0;
+            // }
+            // if (a < b) {
+            //     return -1;
+            // }
+            //升序排列
+            // return a-b;
+            // 降序排列
+            // return b-a;
+        });
+        console.log(w.toString());
+    //    console.log(array1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aaa</title>
+    <script>
+        /* 
+            if语句
+                语法二
+                if(条件表达式){
+                    语句1
+                }else{
+                    语句2
+                }
+                语法三
+                    if(条件表达式){
+                        语句1
+                    }else if(条件表达式){
+                        语句2
+                    }else if(条件表达式){
+                        语句3
+                    }else if(条件表达式){
+                        语句4
+                    }
+                    if ..else if...
+                        当语句执行时会从上到下一次对条件表达式进行求值判断
+                            如果表达式求值为true 则执行的当前的语句
+                                如果表达式为false 则执行下面的语句
+                                    下面的语句求值如果为true 则执行当前语句
+                                        false则继续执行
+                        如果所有的条件都不满足，则执行最后的else语句。  没有else 都不执行
+                        该语句中，只有一个代码块被执行，一旦代码块执行了，则直接结束语句
+
+        */
+        // var age = 20;
+        /* if (age >= 35) {
+            alert("你已经退休了");
+        } else {
+            alert("你还年轻");
+
+        } */
+        var age;
+        age = 35;
+
+        if (age > 100) {
+            alert("你已经百岁了");
+        } else if (age > 70) {
+            alert("你大于70岁小于100岁");
+        } else if (age > 50) {
+            alert("你大于五十小于70");
+        } else if (age > 17) {
+            alert("你大于17岁小于50岁");
+        } else {
+            alert("你还没到17岁呢");
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

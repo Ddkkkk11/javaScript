@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 添加超链接 -->
+    <button id="btn01">添加超链接</button>
+    <ul id="ul">
+        <li>
+            <a href="javascript:; " class="link">
+                超链接1
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">
+                超链接2
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">
+                超链接3
+            </a>
+        </li>
+    </ul>
+    <!-- javascript -->
+    <script>
+        // 点击按钮后添加超链接
+        var btn01 = document.getElementById("btn01");
+        var ul = document.getElementById("ul");
+        btn01.onclick = function () {
+            // 创建一个li
+            var li = document.createElement("li");
+            li.innerHTML = "<a href='javascript' class='link'>超链接</a>";
+            ul.appendChild(li);
+        };
+        // 获取a  
+        var a = document.getElementsByTagName("a");
+        /* 
+           为每个超链接添加单击响应函数
+           这里我们为每一个超链接绑定了单击响应函数 ,这种操作比较麻烦 
+               只能为已经有了的超链接绑定单击函数,而新添加的超链接需要重新绑定
+           */
+        // for (let index = 0; index < a.length; index++) {
+
+        //     a[index].onclick = function () {
+        //     };
+        // }    
+        /* 
+        我们希望只绑定一次事件,即可应用到多个元素上,即使元素是后来添加的
+            我们可以尝试将其绑定给元素共同的祖先元素 ul
+
+            事件的委派
+                --将事件统一绑定给元素的共同祖先元素 这样当后代 元素触发时 祖先元素会因为冒泡也被触发
+                    从而通过祖先响应函数来处理事件
+            --事件委派是利用了冒泡,通过委派可以减少事件绑定次数
+        */
+        // 为ul绑定单击响应函数
+        ul.onclick = function (event) {
+            // 如果触发的是事件对象是我们期望的元素,则执行否则不执行
+            if (event.target.className=="link") {
+                alert("我是ul中的响应函数");
+            }
+            /* 
+               event事件里面的target表示触发事件的对象
+               alert(event.target);
+           */
+            // alert("我说ul的单击响应函数");
+            return false;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            /* 在js中所有的数值都是Number类型 
+                包括整数和浮点数（小数）
+                JS中可以表示数字的最大值 alert(Number.MAX_VALUE);
+                  Number.MAX_VALUE  1.7976931348623157e+308  如果使用Number 超过了最大值 
+                                            则会返回一个infinity 表示（正无穷）
+                                    使用typeof 检查infinity 会返回一个Number
+                                    NAN 是一个特殊的数字 表示not A Number  
+                                    使用typeof 检查NAN 时 也会返回一个Number
+
+
+
+
+                a=Number.MIN_VALUE;  表示a是一个最小的小数  大于0的最小数
+                                    5e-324
+            */
+           //数字123
+           var a=123;
+        //字符串123
+           var str="123";
+            /*  
+            
+                    可以使用一个运算符 typeof
+                        来检查一个变量的类型
+                语法:typeof 变量
+                检查字符串会返回 String 
+                检查数字会返回Number
+            */  
+                //alert(typeof str);
+                var a=Number.MAX_VALUE *Number.MAX_VALUE;
+                var b=Infinity;
+                a=NaN;
+                alert(a);
+                var c =123+666666;
+
+        // 在js中整数的运算基本上可以保持精确
+        var c=0.1+0.2;
+        alert(c);
+            // 如果使用JS进行浮点数运算 可能会得到一个不精确的结果
+            /* 在使用JS 中不要使用JS进行对精度比较高的运算 */
+
+
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

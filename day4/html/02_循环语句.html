@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            向页面中输出连续数字
+        */
+        /* 循环语句
+            通过循环语句可以反复的执行一段代码多次
+                while循环
+                    语法:
+                        while(条件表达式){
+                                语句...
+                        }    
+                    -while语句在执行时先对表达式进行判断
+                        如果值为true 则执行循环体
+                            循环体完结后继续执行，如果为true继续执行循环体 以此类推
+                        如果值为false 则结束循环   
+                do...while循环
+                        --语法 :
+                            do{
+                                    语句...
+                                }while()
+                        do..while()在执行时会先执行循环体   
+                                    --循环体执行完毕后，在对while的条件表达式进行判断
+                                    如果结果为true则继续执行循环体，执行完后继续判断依次类推、
+                                    如果结果为false则终止循环
+                         
+                两种语句类似 不同的是dowhile 至少执行一次循环   
+                                    而while不能
+            */
+        // document.write(i + "<br>");
+        // document.write(2+"<br>");
+        // document.write(3+"<br>");
+        // document.write(4+"<br>");
+        // document.write(5+"<br>");
+        // document.write(6+"<br>");
+        // document.write(7+"<br>");
+        // 像这样将表达式写死的循环 叫做死循环
+        // 该循环不会停止 除非浏览器关闭  死循环在开发中慎用
+        // 可以用break;来终止循环
+        /*  var i = 1;
+         while (true) {
+             alert(i++);
+             if (i == 100) {
+                 break;
+             }
+         } */
+        // 创建一个循环需要三个步骤
+        // 1.创建一个初始化变量
+        var i = 0;
+
+        // 2.在循环中设置一个条件表达式
+        /* while (i < 10) {
+            // 3.定义一个更新表达式，每次更新初始化变量
+            document.write(i++ + "<br>");
+        } */
+        do{
+            document.write(i++ + "<br>");
+        }while(false);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

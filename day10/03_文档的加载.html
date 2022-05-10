@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        浏览器在加载一个页面时，是按照自上向下的顺序加载的,读取到一行就运行一行 
+        如果将script标签写到页面的最上面，在代码执行时页面还没有加载
+        我们的DOM对象也没有加载会导致我们无法获取到DOM对象
+            
+
+     -->
+     <script>
+         /* 
+            onload事件会在整个页面加载完成后才触发
+            为window绑定一个onload事件
+                    该事件对应的响应函数将会在页面加载完成后执行
+                        这样可以    确保我们代码执行的时候所有的dom对象已经加载完毕了
+         */
+        window.onload=function(){
+            alert("页面加载完了");
+        };
+
+        
+     </script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <script>
+        /* 
+        将js代码写到下面就是为了在页面加载完成后在执行我们js代码
+        
+        */
+            // 获取id为btn的对象
+            var btn=document.getElementById("btn");
+        // 为按钮绑定一个单击响应事件
+            btn.onclick=function(){
+                alert("不要点我");
+            }
+</script>
+</body>
+
+</html>

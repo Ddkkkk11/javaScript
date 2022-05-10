@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun() {
+            alert("函数要执行了~~~");
+
+            for (let i = 0; i < 5; i++) {
+                console.log("i=" + i);
+                if (i == 2) {
+                    // 使用break可以退出当前的循环
+                    break;
+                    // continue用于跳过当次循环
+                    // return;使用return可以结束整个函数
+                }
+            }
+            alert("函数要结束了~~~");
+        }
+        // fun();
+        /* 返回值可以是任何的数据类型
+            也可以是一个对象,也可以是一个函数 */
+        function fun2() {
+            // 返回一个对象
+
+            // let obj={name:"xdd"};
+            // return obj;
+        }
+        let a = fun2();
+        // console.log("a="+a);
+        function fun3() {
+            // 在函数内部在声明一个函数
+            function fun4() {
+                alert("我是fun4");
+            }
+            // fun4();
+            // 将函数对象作为返回值去返回
+            return fun4;
+        };
+        let aa = fun3();
+        // aa();
+        fun3()();
+        // console.log(aa);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

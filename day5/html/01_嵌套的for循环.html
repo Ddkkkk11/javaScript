@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在页面中输出以下图形
+                *
+                **
+                ***
+                *****
+         */
+        // 这是a为行数  总行数为五行
+        // for循环执行几次,图形的高度就是多少
+        /*   for (var a = 0; a < 5; a++) {
+              // 在循环的内部在创建一个循环,用来控制图形的宽度
+              // 目前我们外部的for循环执行1次 内部for循环执行五次
+              // 内层循环可以控制循环的宽度 执行几次图形就是多宽度
+              for (var j = 0; j < a+1; j++) {
+                  document.write("*");
+              }
+              document.write("<br>");
+          } */
+        //   倒放
+       /*  for (var a = 5; a > 0; a--) {
+            // 控制宽度
+            for (var j = 0; j < a; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        } */
+        for (var a = 0; a < 5; a++) {
+            // 控制宽度
+            for (var j = 0; j < 5-a; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        } 
+    </script>
+</head>
+<body>
+</body>
+</html>

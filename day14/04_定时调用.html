@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="count" style="text-align: center; vertical-align: middle;"></h1>
+
+    <script>
+        // 获取count
+        var count = document.getElementById("count");
+        // 使count的内容自动切换
+        /* 
+        JS的程序执行是非常快的
+            如果希望一段程序,每隔一段时间执行一次,可以使用定时调用
+        */
+        // for (let index = 0; index <10; index++) {
+
+        //     count.innerHTML=index;   
+        //     }
+        var num = 0;
+
+        var a = setInterval(function () {
+            count.innerHTML = num++;
+            if (num > 100) {
+            clearInterval(a);
+            }
+        }, 30);
+      
+            /*
+        setInterval();
+        定时调用
+            --可以将一个函数每隔一段时间调用一次
+        参数
+            1.回调函数,每隔一段时间调用一次
+            2.每次调用的时间，单位是毫秒
+        返回值
+                会返回一个Number类型的数值
+            */
+        // clearInterval();可以用来关闭定时器
+        /* 
+            方法中需要一个定时器的标识符作为参数,这样关闭标识符对应的定时器
+            clearInterval(标识符);
+        
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <img id="img1" src="./IMG/1.jpg" alt="">
+
+    <button id="btn01">Begin</button>
+    <button id="btn02">end</button>
+    <script>
+        /* 
+        使图片可以自动切换
+        */
+        // var imgArr = ["./IMG/1.jpg", "./IMG/2.jpg", "./IMG/3.jpg", "./IMG/4.jpg", "./IMG/5.jpg"];
+        // var img1 = document.getElementById("img1");
+        // // 创建一个变量 用来保存数组的索引
+        // var index = 0;
+        // // 开启一个定时器,来自动切换图片
+        // setInterval(function () {
+        //     // 使索引自增
+        //     index++;
+        //     // 修改img src属性
+        //     // if (index==imgArr.length-1) {
+        //     //         index=-1;
+        //     // }
+        //     index = index % imgArr.length;
+        //     img1.src = imgArr[index];
+
+        // }, 1000)
+        var btn01 = document.getElementById("btn01");
+        var btn02 = document.getElementById("btn02");
+        var a;
+        btn01.onclick = function () {
+            /* 
+            目前我们每点击一次按钮 则定时器会开启一个 只能关最后一个
+                点击多次就会开启多个定时器,这就导致了图片的切换速度过快
+                    并且我们只能关闭最后一次开始的定时器
+            */
+            var imgArr = ["./IMG/1.jpg", "./IMG/2.jpg", "./IMG/3.jpg", "./IMG/4.jpg", "./IMG/5.jpg"];
+            var img1 = document.getElementById("img1");
+            // 创建一个变量 用来保存数组的索引
+            var index = 0;
+            //每次开启一次吧当前元素的上其他定时器关闭,
+            clearInterval(a); 
+
+
+            // 开启一个定时器,来自动切换图片
+            a = setInterval(function () {
+                // 使索引自增
+                index++;
+                // 修改img src属性
+                // if (index==imgArr.length-1) {
+                //         index=-1;
+                // }
+                index = index % imgArr.length;
+                img1.src = imgArr[index];
+            }, 1000)
+        };
+        btn02.onclick = function () {
+            // clearInterval可以接受任意参数,如果是一个有效的定时器,则停止对应的定时器
+                // 如果参数不是一个有效的表示,则什么也不做
+            clearInterval(a);
+            };
+
+
+
+    </script>
+</body>
+
+</html>

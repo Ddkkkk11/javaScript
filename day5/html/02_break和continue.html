@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            break关键字可以用来退出Switch语句或者循环语句
+            不能在if中使用break
+            break关键字,会立即终止离他最近的循环语句
+        */
+        // 可以为循环语句来创建一个label,来表示当前循环
+        // label:循环语句
+        // 使用break语句时，可以在break后面跟着一个label
+        // 这样break将会结束指定的循环语句,这样break将会结束指定的循环,而不是最近的
+        /*  label: for (let i = 0; i < 5; i++) {
+             console.log("外层循环111111" + i);
+             for (let j = 0; j < 5; j++) {
+ 
+                 console.log("内层循环" + j);
+                 break label;
+             }   
+ 
+         }
+  */
+        //  continue 关键字用来跳过当次循环
+        // 同样continue默认只会对他离的最近的循环起作用
+       hello: for (var o = 0; o < 5; o++) {
+            console.log("-------->" + o);
+
+            for (var p = 0; p < 5; p++) {
+                if (p==1) {
+                  continue ;
+                }
+                console.log("--------->>" + p);
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

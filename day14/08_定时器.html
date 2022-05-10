@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+
+    }
+
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: antiquewhite;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <button id="btn01">点击按键以后box1向右移动</button>
+    <div id="box1"></div>
+    <div style="height: 1000px; position: absolute; border-left: 1px black solid  ; left: 800px;top: 0px;"></div>
+    <script>
+
+        var btn01 = document.getElementById("btn01");
+        var box1 = document.getElementById("box1");
+        var timer;
+        btn01.onclick = function () {
+            // 开启一个定时器用来执行动画效果
+            clearInterval(timer);
+            timer = setInterval(function name(params) {
+                // 获取box1原来的值
+                // clearInterval(timer);
+                var oldValue = getStyle(box1, "left");
+                // alert(oldValue);
+                var newValue = parseInt(oldValue) + 1;
+                if (newValue >= 800) {
+                    newValue = 800;
+                    clearInterval(timer);
+                }
+                box1.style.left = newValue + "px";
+                // box1.style.top = obj + 50 + "px";
+                // 判断 如果box1.style.left的值大于八百 
+                // if (newValue >= 800) {
+                //     newValue = 800;
+                //     clearInterval(timer);
+                // }
+                // 当移动到800px 定时器关闭
+            }, 10);
+            function getStyle(obj, name) {
+                return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name];
+            }
+        };
+
+
+
+
+    </script>
+</body>
+
+</html>

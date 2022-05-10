@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置outer的样式 */
+        #outer {
+            /* 设置宽和高 */
+            width: 1246px;
+            height: 460px;
+            /* 裁剪溢出的内容 */
+            overflow: hidden;
+            margin: 50px auto;
+            /* background-color: #333; */
+            padding: 10px 0 10px 0;
+            position: relative;
+        }
+
+        #imgList {
+            list-style: none;
+            /* 设置ul宽度 */
+            /* width: 6230px; */
+            height: 100%;
+            position: absolute;
+            /* transition: all 2s; */
+            /* 
+            每向左移动一次  偏移量减去自身宽度
+            
+            */
+        }
+
+        /* 设置li向左浮动 */
+        #imgList li {
+            /* 设置浮动 */
+            float: left;
+            /* 设置左右外边距 */
+            margin: 0 10px;
+        }
+
+        /* 开启定位 */
+        #navDiv {
+            position: absolute;
+            bottom: 50px;
+            /* outer宽度1246  a元素宽度 200 */
+            /* left: 523px; */
+        }
+
+        /* 设置导航点 */
+        #navDiv a {
+            /* 
+            设置超链接浮动
+            */
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            margin-left: 20px;
+            opacity: .5;
+        }
+
+        #navDiv a:hover {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个外部的容器来作为大容器 -->
+    <div id="outer">
+        <!-- 创建一个ul用来放置图片 -->
+        <ul id="imgList">
+            <li><img src="./banner/轮播图1.png" alt=""></li>
+            <li><img src="./banner/轮播图2.png" alt=""></li>
+            <li><img src="./banner/轮播图3.png" alt=""></li>
+            <li><img src="./banner/轮播图4.png" alt=""></li>
+            <li><img src="./banner/轮播图5.png" alt=""></li>
+            <li><img src="./banner/轮播图1.png" alt=""></li>
+        </ul>
+        <!-- 创建导航按钮 -->
+        <div id="navDiv">
+            <a href="JavaScript:;"></a>
+            <a href="JavaScript:;"></a>
+            <a href="JavaScript:;"></a>
+            <a href="JavaScript:;"></a>
+            <a href="JavaScript:;"></a>
+        </div>
+    </div>
+    <script>
+        // 设置imgList的宽度
+        // 获取imglist
+        var imgList = document.getElementById("imgList");
+        // 知道图片有几个
+        var num = imgList.getElementsByTagName("img");
+        // 找到父盒子 找出他的可见宽度
+        var outer = document.getElementById("outer");
+        imgList.style.width = (outer.offsetWidth) * (num.length) + "px";
+        // imgList.style.left=(-1246)*4+"px";
+        var sum = 1;
+        // var index1 = 1;
+        // 自动跳动 112-127
+        var timer;
+        imgList.onmouseleave = function () {
+            timer = setInterval(function () {
+                if (sum == num.length) {
+                    sum = 0;
+                }
+                imgList.style.left = (-1246) * sum + "px";
+                // a[sum-1].style.backgroundColor="antiquewhite";
+                sum++;
+                for (let index = 0; index < a.length; index++) {
+                    a[index].style.backgroundColor = "";
+                }
+                a[sum - 1].style.backgroundColor = "red";
+            }, 5000)
+        };
+
+
+        // setInterval(function () {
+        //     if (sum == num.length) {
+        //         sum = 0;
+        //     }
+        //     imgList.style.left = (-1246) * sum + "px";
+        //     // a[sum-1].style.backgroundColor="antiquewhite";
+        //     sum++;
+        //     for (let index = 0; index < a.length; index++) {
+        //         a[index].style.backgroundColor="";
+        //     }
+        //     a[sum-1].style.backgroundColor="red";
+        // }, 2000)
+        // 让导航点居中 获取div
+        var navDiv = document.getElementById("navDiv");
+        var a = navDiv.getElementsByTagName("a");
+        navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + "px";
+        var index = 0;
+        a[index].style.backgroundColor = "red";
+        /* 
+        点击超链接切换到指定的图片  
+                点击第一个连接显示第一个图片
+                点击第二个连接显示第二个图片    
+        */
+        //    把图片路径存放到一个数组
+        for (var i = 0; i < a.length; i++) {
+            a[i].num = i;
+            a[i].onclick = function () {
+                index = this.num;
+                clearInterval(timer);
+                // imgList.style.left = (-1246) * index + "px";****
+                // alert(this.num);
+                // a[index].style.backgroundColor = "antiquewhite";这样点击后会使所有的都变黑 不行
+                setA();
+                move(imgList, (-1246) * index, 20, "left", function () {
+
+                });
+            };
+            // 开启自动切换图片
+            // autoChange();
+            function setA() {
+                // 遍历所有的数组a 并将他们的背景颜色设置为红色
+                for (var i = 0; i < a.length; i++) {
+                    // a[index].style.backgroundColor = "black";
+                    /* 
+                    因为内联样式优先级较高  将数组a内联设置后 a的hover 会被覆盖  可以让所有的背景颜色为空串
+                            这样 没有内联样式 hover 就还在
+                    */
+                    a[i].style.backgroundColor = "";
+
+                }
+                a[index].style.backgroundColor = "red";
+            }
+            // var b = 0;
+            // 创建一个函数来开启自动切换   
+
+
+
+        }
+        function autoChange() {
+            setInterval(function () {
+                // 使索引自增
+                index++;
+                // 执行动画,切换图片
+                move(imgList, (-1246) * index, 20, "left", function () {
+
+                });
+            }, 3000);
+
+        }
+    </script>
+    <script src="./js/tools.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.toString = function () {
+            return "Person[name= " + this.name + "  ,age=" + this.age + "]";
+        }
+        // 创建一个Person对象
+        var per = new Person("xdd", 20);
+        var per1 = new Person("asd", 12);
+        var per2 = new Person("rdc", 23);
+        var per3 = new Person("qwe", 42);
+        var per4 = new Person("zxc", 14);
+        // console.log(per2.toString());
+        // 将这些Person对象放入数组中
+        var perArr = [per, per1, per2, per3, per4];
+        /*
+                创建一个函数，可以将perArr中的满18岁的Person提取出来，
+                然后封装到一个新的数组中并返回
+            */
+        var arr1 = [];
+        function takeAge() {
+            for (let i = 0; i < perArr.length; i++) {
+                if (perArr[i].age >= 18) {
+                    arr1.push(perArr[i]);
+                }
+            }
+            return arr1;
+        }
+        var result = takeAge();
+        console.log(">18的分别是"+result);
+        // for (let index = 0; index < arr1.length; index++) {
+        //     console.log("大于18岁的人是" + result[index].name + "他的年龄是" + result[index].age);
+        // }
+            
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

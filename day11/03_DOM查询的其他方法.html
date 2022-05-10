@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <button class="btn"></button>
+        <div>我是box1中的</div>
+        <div class="box3">box3</div>
+    </div>
+    <script>
+        //获取body标签
+        // var tagB = document.getElementsByTagName("body")[0];
+        /* 
+        在document中有一个属性body,他保存的是body的引用
+        */
+        var tagB = document.body;
+        // console.log(tagB.innerHTML);
+        // document.documentElement保存的是html根标签
+        var doC = document.documentElement;
+        // console.log(doC);
+        var all = document.all;
+        // document.all代表的是页面的所有对象 
+        // all=document.getElementsByTagName("*");
+        // console.log(all.length);
+
+        /* 
+            根据元素的class属性值查询一组元素节点对象
+            getElementsByClassName("box1")可以根据属性值获取一组元素节点对象
+                不支持ie8以下的浏览器
+        */
+        // var box1 = document.getElementsByClassName("btn");
+        // console.log(box1.length);
+        // console.log(box1.innerHTML);
+        // box1[0].innerHTML = "button";
+
+        // 获取页面中所有的div
+        var all = document.getElementsByTagName("div");
+        // 获取class为box1中的所有div   
+
+        /* 
+        document.querySelector()
+            需要一个选择器的字符串作为参数
+            虽然ie8里面没有getElementsByClassName但是可以使用querySelector()代替
+            --该方法总会返回唯一的一个元素,如果满足条件的有多个那么他只会返回第一个
+        */
+        var best = document.querySelector(".box1 div");
+        best = document.querySelectorAll(".box1 div");
+        // querySelectorAll该方法和querySelectorAll 用法类似 但是他会把符合条件的封装到一个数组中
+        // 即使符合条件的只有一个 ,他也会返回数组
+        console.log(best[0]);
+                // all=document.getElementsByTagName("div")[0].lastElementChild;
+                            // console.log(all);
+
+    </script>
+</body>
+
+</html>

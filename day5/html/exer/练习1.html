@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+
+        }
+        span{
+
+            display: inline-block;
+            width: 80px;
+            height: 20px;
+            padding-left: 10px;
+            background-color: coral;
+        }
+
+
+    </style>
+    <script>
+
+        /*1. 打印99乘法表
+        1*1=1
+        1*2=2   2*2=4
+        1*3=3   2*3=6   3*3=9
+        1*4=4   2*4=8   3*4=12  4*4=16
+        */
+        /*  for (var i = 0; i < 9; i++) {
+             for (var j = 0; j < i+1; j++) {
+ 
+ 
+                 document.write("<span>"+(j+1) + "*" + (i+1) + "=" + ((i + 1) * (j+1)) + "</span>");
+ 
+ 
+             }
+             document.write("<br>");
+ 
+ 
+         }
+ 
+  */
+        /* 2.打印1-100之间的质数 */
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            var flag = true;
+            if(i!=1){
+            for (var num = 2; num < i; num++) {
+                if (i % num == 0) {
+                    flag = false;
+                }
+
+            }
+
+            if (flag) {
+                console.log("这个数是质数" + i);
+                sum++;
+                console.log("总共有" + sum + "个质数");
+            }else{
+                console.log("这个数不是质数" + i);
+
+            }
+        }
+    }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

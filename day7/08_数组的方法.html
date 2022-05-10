@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个数组
+        var arr = ["孙悟空", "猪八戒", "唐僧", "沙和尚"];
+
+        /* 
+        --push该方法可以在数组(末尾)最后添加一个或者多个元素,并返回数组长度
+        --可以将要添加的元素作为方法的参数传递,
+        --这样这些元素将自动添加到元素的末尾
+        --该方法会将数组新的长度作为返回值返回
+        join()方法也可将所有数组元素结合为一个字符串。
+                    它的行为类似 toString()，但是您还可以规定分隔符：
+        */
+        // console.log(arr.push("qaz"));
+        console.log(arr);
+        // console.log(arr.join());
+        // console.log(arr[4]);
+        /* 
+        pop()
+            -该方法
+                可以删除数组的最后一个元素,并把删除的元素作为返回值返回
+        */
+        result = arr.pop();
+        result = arr.pop();
+        // console.log(arr);
+        // console.log("删除的元素是:"+arr.pop());
+        // console.log(typeof arr.pop());
+        /* 
+            unshift()
+                -向数组开头添加一个元素或多个元素,并返回新的数组长度
+                    向前面插入元素以后,其他的元素会依次调整
+        */
+
+        arr.unshift("二郎神 ", "沉香");
+        console.log(arr);
+        result =arr.shift();
+        console.log("删除的元素是:" + result);
+        /* 
+        shift 可以删除数组的第一个元素 ,并将我们被删除的元素作为返回值返回
+        */
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

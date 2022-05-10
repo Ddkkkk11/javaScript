@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let obj = {
+            name: "sun",
+            age: 18,
+            gender: "男",
+            address: "安康学院",
+            students: "学生"
+        };
+        // 枚举对象中的属性
+        // 使用 for ... in 语句
+        /* 
+        语法:
+            for(var 变量 in  对象){
+            }
+            for in 语句对象中有几个属性,循环就会执行几次
+                每次执行时,会将对象中的属性赋值给n
+        */
+        // for (var n in obj) {
+        //     console.log("属性名" + n + "\ \ \ \ :" + obj[n]);
+        // }
+        for (var n in window) {
+            console.log("属性名" + n + "\ \ \ \ :" + obj[n]);
+        };
+
+        // obj[变量名]    log后就会输出每个变量对应的值，这样就可以获取到属性对应的值  
+        /*
+        为什么不输出obj.n呢 因为obj里面没有n的这个属性, 哪为什么可以输出[n]呢 因为n是个变量
+            for in 方法每次会把提取到的属性名放到变量n里面 n是变化的  obj[n]后可以提取到每个变量对应的值
+         */
+        // console.log(typeof n);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 200px;
+        }
+        #img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 400px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <p>我是一段文字</p>
+    <div id="box1">
+    </div>
+    <div id="box2">
+    </div>
+    <img  id="img" src="/day11/IMG/1.jpg" alt="">
+    <script>
+        /* 
+        拖拽box1元素
+           --拖拽的流程
+               1.当鼠标在拖拽元素上按下时开始拖拽  onmousedown
+               2.当鼠标移动时被拖拽元素跟随鼠标移动    onmousemove 
+               3.当鼠标松开时,被拖拽元素固定到当前位置         onmouseup          
+               */
+        // setCapture()这个方法只有iE,但是在火狐中不会报错
+        // 但是在chrome中会报错
+
+        
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var img = document.getElementById("img");
+        function drag(obj) {
+            obj.onmousedown = function (event) {
+                // if (box1.setCapture) {
+                //     box1.setCapture();
+                // }
+                obj.setCapture && obj.setCapture();
+
+                // div的偏移量  水平 鼠标.clientX-鼠标.offsetLeft
+                // div的偏移量  垂直 鼠标.clientY-鼠标.offsetTop
+                /* 
+                因为点击是在点下的时候 偏移量已经决定了 所以在按下的时候求出偏移量
+                */
+                event = event || window.event;
+                var ol = event.clientX - obj.offsetLeft;
+                var ot = event.clientY - obj.offsetTop;
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    var st = document.body.scrollTop || document.documentElement.scrollTop;
+                    var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+                    var left = event.clientX - ol;
+                    var top = event.clientY - ot;
+                    obj.style.left = left + sl + "px";
+                    obj.style.top = top + st + "px";
+                }
+                document.onmouseup = function () {
+                    //  3.当鼠标松开时,被拖拽元素固定到当前位置         onmouseup          
+                    // 取消documentOnmousemove事件
+                    document.onmousemove = null;
+                    // alert("鼠标松开了");
+                    document.onmouseup = null;
+                    //当鼠标松开时,取消对事件的捕获
+                    // 松开时取消捕获
+                    obj.releaseCapture && obj.releaseCapture();
+                };
+                /* 
+                当我们去拖拽一个网页的内容时,浏览器会默认去搜索引擎中的搜索内容
+                    此时会导致拖拽功能的异常,这个是浏览器提供的默认行为
+                        如果不希望行为发生,则可以通过return false 来取消默认行为
+                        但是这个方法对于IE8不起作用
+                */
+                return false;
+            };
+            /* 
+            给拖拽绑定一个函数
+            
+            */
+
+
+        };
+        drag(box1);
+        drag(box2);
+        drag(img);
+
+
+
+    </script>
+</body>
+
+</html>

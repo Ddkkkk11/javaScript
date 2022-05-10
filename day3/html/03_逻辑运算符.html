@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* JS中为我们提供了三种逻辑运算符
+            ! 非
+                -！可以对一个值进行非运算
+                    所谓非运算就是对布尔值进行取反操作
+                        true变false 
+                        false变true
+                        -如果对一个值进行两次取反，它不会变化
+                        -如果对非布尔值进行运算，则会将其转换为布尔值 在运算    
+                                可以利用这一特点将其他值转换为布尔值  可以为任意一个数据类型做两次非运算 ，来将其转换为布尔值
+                                    原理和boolean();函数一样
+
+            && 与   
+                --&&可以对负号两侧的值进行与运算并返回结果
+                运算规则  如果两个值都是true 返回true   1&&1 =1   1&&0=0  0&&1=0  0&&0=0
+                    --两个值中只要有一个为false 则值为false     两个值都为true时才返回true 
+                    JS中的与 属于短路的与   如果第一个值为false则不会看第二个值
+
+            ||或    
+            --可以对符号两侧的值进行或运算 并返回结果  两个值有一个true 则返回true    两个都为false 才为false
+            --||只要有一个true 则返回true  1||1=1 1||0=1 0||0=0  0||1=1
+            JS中的或属于短路的或  如果第一个值为true 则不会看第二个值 
+                    如果第一个值为false  则会看第二个值
+
+
+        
+        
+        */
+       //第一个是true 会检查第二个值
+        // true && alert("我是true");
+        // 第一个值为false 不会检查第二个值
+        // false && alert("我是true");
+
+        var a=true;
+        a=!a;
+        console.log(a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

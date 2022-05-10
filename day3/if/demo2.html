@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num1 = +prompt("请输入第一个数字");
+        var num2 = +prompt("请输入第二个数字");
+        var num3 = +prompt("请输入第三个数字");
+        /* 
+        
+        
+        prompt()函数的返回值是一个String类型
+        */
+        /*  var max = num1 > num2 ? num1 : num2;
+         var max = max > num3 ? max : num3;
+         alert("三个数最大的数字是:"+max); */
+        /* if (num1 > num2 && num1 > num3 && num2 > num3) {
+            alert("他们分别是" + num3 + "," + num2 + "," + num1)
+        } else if (num1 > num2 && num1 > num3 && num3 > num2) {
+            alert("他们分别是" + num2 + "," + num3 + "," + num1)
+        } else if (num2 > num1 && num2 > num3 && num1 > num3) {
+            alert("他们分别是" + num3 + "," + num1 + "," + num2)
+        } else if (num2 > num1 && num2 > num3 && num3 > num1) {
+            alert("他们分别是" + num1 + "," + num3 + "," + num2)
+        } else if (num3 > num1 && num3> num2 && num1> num2) {
+            alert("他们分别是" + num2 + "," + num1 + "," + num3)
+        } else {
+            alert("他们分别是" + num1 + "," + num2 + "," + num3)
+        } */
+        if (num1 > num2 && num1 > num3) {
+            // num1最大
+            if (num2 > num3) {
+                alert(num3 + "," + num2 + "," + num1);
+            } else {
+                alert(num2 + "," + num3 + "," + num1);
+            }
+        } else if (num2 > num3 && num2 > num1) {
+            //num2最大
+            if (num1 > num3) {
+                alert(num3 + "," + num1 + "," + num2);
+            } else {
+                alert(num1 + "," + num3 + "," + num2);
+            }
+        } else if (num3 > num2 && num3 > num1) {
+            //num3 max
+            if (num1 > num2) {
+                alert(num2 + "," + num1 + "," + num3);
+            } else {
+                alert(num1 + "," + num2 + "," + num3);
+            }
+
+
+        }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

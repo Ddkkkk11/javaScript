@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        假如投资的年利率为5%，试求从1000块增长到5000块，需要花费多少年
+         */
+        var mon = 1000;
+        var sum = 0;
+        while (mon <= 5000) {
+            mon *= 1.05;
+            sum++;
+        }
+        document.write("sum=" + sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

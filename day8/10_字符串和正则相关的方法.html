@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+        var str = "1a2b3c4d5f6";
+        /* 
+        spilt()
+            --可以将一个字符串拆分为一个数组
+            方法中可以传递一个正则表达式作为参数，这样方法将会根据正则表达式去拆分字符串
+                这个方法即使不指定全局匹配也会全部拆分
+        */
+        //    str=str.split("c");
+        //    console.log(str);
+        //    console.log(str.length);
+        /* 
+         根据任意字母来拆分字符串    
+         --可以传递一个正则表达式作为参数,方法将会根据正则表达式去拆分字符串
+        str=str.split(/[a-z]/);
+
+        */
+        //    str=str.split(/[a-z]/);
+        //    console.log(str);
+        //    console.log(typeof str);
+        //    console.log(Array.isArray(str) );
+        //    console.log(str.length);
+        /* 
+        search()
+             可以搜索字符串中是否含有指定内容
+                 并返回搜索内容第一次出现的索引,如果没有搜索到但会-1
+                     他可以接受一个字符串作为参数,然后根据正则表达式去检索字符串
+                     search只会查找第一个,即使设置全局匹配也没有
+        */
+        var str1 = "Hello xdd adc Hello afc xdd abc";
+
+        var result = str1.search(/a[bde]c/);
+        //  console.log(result);
+        /* 
+        想搜索字符串中是否含有abc或者adc或者afc
+        */
+        /* 
+            match()
+                --可以根据正则表达式,从一个字符串中将符合条件的内容提取出来
+                --默认情况下我们的match()只会找到第一个符合要求的内容,找到以后就停止检索
+                    我们可以设置正则表达式为全局匹配模式,这样就会匹配到所有的内容
+                result = str.match(/[a-z]/gi);
+                既全局匹配又忽略大小写  
+                        可以为一个正则表达式设置多个匹配模式 顺序无所谓
+                        match()会将匹配到的内容封装到一个数组中返回,即使只查询一个结果
+                */
+        // str = "1a2b3c4d5f6A";
+        // str="你加一下我qq"+45672942;
+        // str.match(/[0-9]/g);
+        // arr.unshift();
+         
+        // console.log(arr.join(''));
+        // console.log(str);
+        // result = str.match(/[a-z]/gi);
+        result = str.match(/[0-9]/g);
+        // console.log(result.join());
+        // console.log("爬取到的qq邮箱是" + result.join("") + "@qq.com");
+        /*
+       replace()
+          --可以将字符串中指定的内容替换为新的内容
+          --参数
+                1.被替换的内容,可以接收正则表达式作为参数
+                2.新的内容
+                    默认只替换第一个 可以传入正则表达式然后替换
+                如果想把默写字符删除 可以把新的内容改为空串,这样就会把删除以后的部分输出
+          */
+      var str2="1a2s3d4f5g6h7j8k9l";
+        console.log(str2.replace(/[a-z]/g,""));
+    </script>
+</body>
+
+</html>
